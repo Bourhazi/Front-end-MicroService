@@ -1,0 +1,29 @@
+<div class="container mt-4">
+  <h2>Voitures</h2>
+  <a routerLink="/voitures/new" class="btn btn-primary mb-2">Add New Voiture</a>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Marque</th>
+        <th>Matricule</th>
+        <th>Model</th>
+        <th>Client</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let voiture of voitures">
+        <td>{{ voiture.id }}</td>
+        <td>{{ voiture.marque }}</td>
+        <td>{{ voiture.matricule }}</td>
+        <td>{{ voiture.model }}</td>
+        <td>{{ voiture.client?.name }}</td>
+        <td>
+          <button (click)="deleteVoiture(voiture.id)" class="btn btn-danger btn-sm">Delete</button>
+          <a [routerLink]="['/voitures/edit', voiture.id]" class="btn btn-warning btn-sm">Edit</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

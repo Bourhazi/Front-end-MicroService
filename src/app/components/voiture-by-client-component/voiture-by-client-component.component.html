@@ -1,0 +1,21 @@
+<div class="container mt-4">
+  <h2>Voitures du client {{ clientId }}</h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Marque</th>
+        <th>Matricule</th>
+        <th>Model</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let voiture of voitures">
+        <td>{{ voiture.id }}</td>
+        <td>{{ voiture.marque }}</td>
+        <td>{{ voiture.matricule }}</td>
+        <td>{{ voiture.model }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

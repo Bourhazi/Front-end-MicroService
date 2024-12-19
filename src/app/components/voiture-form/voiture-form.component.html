@@ -1,0 +1,26 @@
+<div class="container mt-4">
+  <h2>{{ isEdit ? 'Edit' : 'Add' }} Voiture</h2>
+  <form [formGroup]="voitureForm" (ngSubmit)="saveVoiture()">
+    <div class="form-group">
+      <label for="marque">Marque</label>
+      <input type="text" id="marque" formControlName="marque" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label for="matricule">Matricule</label>
+      <input type="text" id="matricule" formControlName="matricule" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label for="model">Model</label>
+      <input type="text" id="model" formControlName="model" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label for="id_client">Client</label>
+      <select id="id_client" formControlName="id_client" class="form-control">
+        <option *ngFor="let client of clients" [value]="client.id">
+          {{ client.name }}
+        </option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-success">{{ isEdit ? 'Update' : 'Save' }}</button>
+  </form>
+</div>
